@@ -1,0 +1,22 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Enums
+{
+    enum months
+    {
+        Jan,Feb,Mar,Apr,May,June,Jul,Aug,Sep,Oct,Nov,Dec
+    }
+
+    months month;
+
+    function setenumvalue() public
+    {
+        month=months.Aug;
+    }
+
+    function getenumvalue() public view returns (months)
+    {
+        return month;
+    }
+}

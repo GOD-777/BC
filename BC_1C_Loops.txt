@@ -1,0 +1,39 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Loops
+{
+    int public j=0;
+    int public k=0;
+    int public l=0;
+
+    function forLoop() public returns (int)
+    {
+        for(int i=0; i<5;i++)
+        {
+            j++;
+        }
+        return j;
+    }
+    function whileLoop() public returns (int)
+    {
+        int i=0;
+        while(i<5)
+        {
+            k++;
+            i++;
+        }
+        return k;
+    }
+    function dowhileLoop() public returns (int)
+    {
+        int i=0;
+        do
+        {
+            l++;
+            i++;
+        }
+        while(i<5);
+        return 1;
+    }
+}

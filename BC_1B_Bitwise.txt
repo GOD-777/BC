@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Bitwise
+{
+    int public a = 2;
+    int public b = 3;
+
+    int public c = (a&b);
+    int public d = (a|b);
+    int public e = (a^b);
+    int public f = (~b);
+    int public g = (a<<1);
+    int public h = (a>>1);
+}

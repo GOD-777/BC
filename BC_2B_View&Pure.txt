@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract ViewAndPure
+{
+    uint public num;
+    function viewFunction1() public view returns(uint)
+    {
+        return num;
+    }
+    function pureFunction1() public pure returns(uint)
+    {
+        return 10;   
+    }
+    function viewFunction2(uint x) public view returns(uint)
+    {
+        return num+x;
+    }
+    function pureFunction2(uint x, uint y) public pure returns(uint)
+    {
+        return x+y;
+    }
+}

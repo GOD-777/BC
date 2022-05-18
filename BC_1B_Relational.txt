@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Relational
+{
+    int public a = 2;
+    int public b = 3;
+    int public c = 2;
+
+    bool public d = (a==c);
+    bool public e = (a!=c);
+    bool public f = (b>c);
+    bool public g = (a<b);
+    bool public h = (b>=c);
+    bool public i = (a<=b);
+}

@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Arithmetic
+{
+    int public a = 20;
+    int public b = 5;
+
+    int public add = a + b;
+    int public sub = a - b;
+    int public mul = a * b;
+    int public div = a / b;
+    int public mod = a % b;
+}

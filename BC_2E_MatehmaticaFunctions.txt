@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract MathematicalFunctions
+{
+    function callAddMod() public pure returns (uint)
+    {
+        //(x+y) % k
+        return addmod(4,5,3);
+    }
+    function callMulMod() public pure returns (uint)
+    {
+        //(x*y) % k
+        return mulmod(4,5,3);
+    }
+}

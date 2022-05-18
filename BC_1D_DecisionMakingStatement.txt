@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract DecisionMakingStmnts
+{
+    int i=9;
+    int x=10;
+
+    function ifstmt() public view returns(bool)
+    {
+        if(i<10)
+            return true;
+    }
+    function ifelse() public view returns(bool)
+    {
+        if(i>10)
+            return true;
+        else
+            return false;
+    }
+    function ifelseif() public view returns(int)
+    {
+        if (x < 10)
+            return 0;
+        else if (x < 20)
+            return 1;
+        else
+            return 2;
+    }
+}

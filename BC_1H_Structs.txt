@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Structs
+{
+    struct Employee
+    {
+        string name;
+        string empid;
+        int age;
+    }
+
+    Employee emp1;
+
+    function setstructsvalue() public
+    {
+        emp1=Employee("Karthik","7",27);
+    }
+    function getstructvalue() public view returns (string memory,string memory,int)
+     {
+         return (emp1.name,emp1.empid,emp1.age);
+     }
+}

@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.13;
+
+abstract contract AbstractContract
+{
+    function getResult() public virtual pure returns(uint);
+}
+contract DerivedContract is AbstractContract
+{
+    function getResult() public override pure returns(uint)
+    {
+        uint a = 1;
+        uint b = 2;
+        uint result = a + b;
+        return result;
+    }
+}
+
+contract CallerContract
+{
+    AbstractContract abs;
+
+    function TestAbstract() public
+    {
+        abs = new DerivedContract();
+    }
+
+    function getValues() public view returns (uint)
+    {
+        return abs.getResult();
+    }
+}

@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Assignment
+{
+    int public add=10;
+    int public sub=20;
+    int public mul=30;
+    int public div=40;
+    int public mod=50;
+
+    function Assign() public returns(int,int,int,int,int)
+    {
+        add+=10;
+        sub-=20;
+        mul*=30;
+        div/=40;
+        mod%=50;
+        return(add,sub,mul,div,mod);
+    }
+}

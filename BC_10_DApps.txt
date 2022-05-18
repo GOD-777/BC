@@ -1,0 +1,19 @@
+pragma solidity 0.8.13;
+
+contract HelloWorld
+{
+   string greet;
+
+   constructor()
+   {
+      greet="Hello World";
+   }
+   function getgreet() public view returns(string memory)
+   {
+      return greet;
+   }
+   function setgreet(string memory greet1) public
+   {
+      greet=greet1
+   }
+}

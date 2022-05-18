@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Arrays
+{
+    uint[] public myArray=[1,2,3,4,5];
+    uint public count=0;
+   
+    function manipulateArray() public returns (uint)
+    {
+        myArray.push(6);
+        for (uint j=0; j< myArray.length; j++)
+        {
+            count=count + myArray[j]; 
+        }
+        return count;
+    }
+}

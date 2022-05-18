@@ -1,0 +1,58 @@
+Link for downloading VMWare Workstation
+https://downloads.digitaltrends.com/vmware-workstation-pro/windows?msclkid=336369b5cf3d11ec86141583b30f92df
+
+Link for downloading Ubuntu ISO image
+https://releases.ubuntu.com/18.04/ubuntu-18.04.6-desktop-amd64.iso
+
+Steps for IROHA Installation:-
+
+1) Install Docker on Ubuntu 
+
+sudo apt-get install curl
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+apt-cache policy docker-ce
+sudo apt-get install -y docker-ce
+
+
+
+2) Create a docker network
+sudo docker network create raina-iroha-network
+
+
+3) Add PostgreSQL to the created docker network.
+sudo docker run --name some-postgres \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=mysecretpassword \
+-p 5432:5432 \
+--network=raina-iroha-network \
+-d postgres:9.5
+
+
+​4) Create a volume of persistant storage named "blockstore" to store the blocks on blockchain.
+sudo docker volume create blockstore
+
+
+5) Configure Iroha on the network. Download the Iroha code from github and install git.
+sudo apt-get install git
+git clone -b develop https://github.com/hyperledger/iroha --depth=1
+
+
+​6) Run the Iroha docker container.
+sudo docker run -it --name iroha \
+-p 50051:50051 \
+-v $(pwd)/iroha/example:/opt/iroha_data \
+-v blockstore:/tmp/block_store \
+--network=raina-iroha-network \
+--entrypoint=/bin/bash \
+hyperledger/iroha:latest
+
+7) ​Run Iroha.
+irohad --config config.docker --genesis_block genesis.block --keypair_name node0
+
+8) Open new terminal and attach the docker container to our terminal.
+sudo docker exec -it iroha /bin/bash
+
+9) Launch the iroha-cli tool and login as admin@test.
+iroha-cli -account_name admin@test

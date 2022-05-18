@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract RequireStatement
+{
+    function checkInput(uint input) public pure returns (string memory)
+    {
+        require(input >= 0,"Invalid uint8");
+        require(input <= 255,"Invalid uint8");
+        return "Input is uint8";
+    }
+    
+    function Odd(uint input) public pure returns(bool)
+    {
+        require(input % 2 !=0);
+        return true;
+    }
+}

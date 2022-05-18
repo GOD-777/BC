@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Conversion
+{
+    uint a=12;
+    uint8 b=14;
+    uint16 c=16;
+
+    function add() public view returns (uint)
+    {
+        uint d = a + uint(b) + uint(c);
+        return d;
+    }
+}

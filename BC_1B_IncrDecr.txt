@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract IncrDecr
+{
+    int public var1=10;
+    int public var2=10;
+    
+    function Increment() public returns (int)
+    {
+        return var1++;
+    }
+    function Decrement() public returns (int)
+    {
+        return var2--;
+    }
+}

@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract SpecialVariables
+{
+    uint data1=0;
+    uint data2=0;
+    uint data3=0;
+
+    function set() public
+    {
+        data1=block.difficulty;
+        data2=block.timestamp;
+        data3=block.number;
+
+    }
+    function get() public view returns (uint, uint, uint)
+    {
+    return(data1, data2, data3);
+    }
+}   

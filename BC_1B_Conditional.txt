@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Conditional
+{
+    int public a=10;
+    int public b=20;
+    int public c=(a>b)?a:b;
+}

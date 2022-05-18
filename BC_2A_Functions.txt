@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.12;
+
+contract Functions
+{
+    function add() public pure returns(uint)
+    {
+        uint num1=10;
+        uint num2=16;
+        uint sum = num1 + num2;
+        return square(sum);
+    }
+
+    function square(uint num) public pure returns(uint)
+    {
+        num = num ** 2;
+        return num;
+    }
+}
